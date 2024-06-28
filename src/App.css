@@ -36,3 +36,23 @@
     transform: rotate(360deg);
   }
 }
+
+
+.header{
+  height: 10vh;
+  background-color: lightseagreen;
+  color:white;
+}
+
+nav a{
+  display: inline-block;
+  padding: 5px;
+  margin-left: 5px;
+  /* margin: 6px; */
+  text-decoration: none;
+}
+
+nav a:hover{
+  cursor:pointer;
+  background-color: lightblue;
+}
