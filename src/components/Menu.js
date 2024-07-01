@@ -1,11 +1,13 @@
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
 export default function Menu(){
     return(
         <nav>
-            <a><Link to="/"> Home</Link></a>
-            <a> <Link to="/about">About</Link></a>
-            <a> <Link to="/contacts"> Contacts</Link></a>
+            {/* The public API for rendering a history-aware <a> */}
+            {/* <NavLink className=""></NavLink> */}
+            <Link to="/"> Home</Link>
+            <Link to="/about">About</Link>
+            <Link to="/contacts"> Contacts</Link>
         </nav>
     )
 }
