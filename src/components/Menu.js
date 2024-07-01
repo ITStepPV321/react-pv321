@@ -1,6 +1,8 @@
 import { Link, NavLink } from "react-router-dom";
 
+
 export default function Menu(){
+ 
     return(
         <nav>
             {/* The public API for rendering a history-aware <a> */}
@@ -8,6 +10,7 @@ export default function Menu(){
             <Link to="/"> Home</Link>
             <Link to="/about">About</Link>
             <Link to="/contacts"> Contacts</Link>
+            <Link to="/books"> Books</Link>
         </nav>
     )
 }
