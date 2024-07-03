@@ -12,6 +12,7 @@ export default function BooksLayout(){
     let [books, setBooks]=useState(booksArrays);
     return(
     <div>
+        {/* /books/*... */}
           {/* <Routes> */}
             {/* <Route path="" element={<h2>List Books</h2>}/> */}
             {/* <Route path="" element={<BooksList booksList={booksArrays}/>}/> */}

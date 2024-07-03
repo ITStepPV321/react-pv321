@@ -7,6 +7,7 @@ import { Routes, Route } from 'react-router-dom';
 import BooksLayout from './components/books/BooksLayout';
 import BooksList from './components/books/BooksList';
 import Book from './components/books/Book';
+import NewBook from './components/books/NewBook';
 
 function App() {
   return (
@@ -24,7 +25,10 @@ function App() {
             <Route path="books" element={<BooksLayout/>}>
                 {/* index <=> path=""  */}
                 <Route index element={<BooksList/>}/> 
+                {/* /books/1 */}
                 <Route path=":id" element={<Book/>}/>
+                {/* /books/newbook */}
+                <Route path="newbook" element={<NewBook/>}/>
                 {/* <Route path="addBook" element={<AddBook/>}/> */}
                 {/* <Route path="editBook" element={<EditBook/>}/> */}
                 <Route path="any" element={<h2>Any</h2>}/>

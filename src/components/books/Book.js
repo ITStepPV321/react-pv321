@@ -1,5 +1,5 @@
 import { useParams, useOutletContext } from "react-router-dom"
-
+//.../books/:id
 export default function Book() {
    //Returns the context (if provided) for the child route at this level of the route hierarchy.  
     const [books, setBooks]=useOutletContext()

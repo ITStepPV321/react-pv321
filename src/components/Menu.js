@@ -6,7 +6,7 @@ export default function Menu(){
     return(
         <nav>
             {/* The public API for rendering a history-aware <a> */}
-            {/* <NavLink className=""></NavLink> */}
+            {/* <NavLink className={isActive ? "active":""} ></NavLink> */}
             <Link to="/"> Home</Link>
             <Link to="/about">About</Link>
             <Link to="/contacts"> Contacts</Link>
