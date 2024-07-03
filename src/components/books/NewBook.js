@@ -57,15 +57,14 @@ export default function NewBook() {
         // console.dir(titleRef.current);
         // console.log(titleRef.current.value);
         // console.log(pagesRef.current.value);
-        setNewBook((newBook) => ({
-            ...newBook,
-            title: titleRef.current.value,
-            pages: pagesRef.current.value
-        }));
+        newBook.title=titleRef.current.value;
+        newBook.pages=pagesRef.current.value;
+
+        setNewBook({...newBook});
         console.log(newBook);
         setBooks([...books, newBook]);
         // navigate to
-        // navigate("/books");
+        navigate("/books");
     }
     return (
         <>
