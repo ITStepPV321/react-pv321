@@ -27,10 +27,15 @@
 }
 
 .books a{
-    color: rgb(5, 82, 82);
+    color: rgb(1, 30, 30);
+    font-weight: 600;
     text-decoration: none;
 }
 
 tr>td:nth-child(2){
     text-align: left;
+}
+
+.book-tables tr:hover{
+    background-color: rgb(189, 199, 199);
 }
