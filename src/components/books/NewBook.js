@@ -71,7 +71,10 @@ export default function NewBook() {
     // =============3.  using hook useForm() in  react-hook-form===========
     const {register, handleSubmit}=useForm();
     const onSubmit=(addBook)=>{
+        addBook.id=books.length+1;
         console.log(addBook);
+        setBooks([...books,addBook]);
+        navigate("/books");
     }
 
     return (
