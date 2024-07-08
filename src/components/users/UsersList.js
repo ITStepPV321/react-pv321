@@ -12,6 +12,9 @@ export default function UsersList() {
     //invoke with visualisation
     // useEffect(() => {
     //     console.log("invoke!! use effect always for visiulation)! ");
+    // return ()=>{
+    //     console.log("invoke when unmounted component (deleted)")
+    // }
     // }
     // );
 
@@ -19,6 +22,7 @@ export default function UsersList() {
     useEffect(() => {
         console.log("invoke!! use effect on start (create component)!");
         loadUsers();
+       
     },[]);
 
     //ivoke when the users property is cahnged
