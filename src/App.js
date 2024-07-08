@@ -9,6 +9,7 @@ import BooksList from './components/books/BooksList';
 import Book from './components/books/Book';
 import NewBook from './components/books/NewBook';
 import EditBook from './components/books/EditBook';
+import UsersList from './components/users/UsersList';
 
 function App() {
   return (
@@ -37,6 +38,8 @@ function App() {
                 {/* <Route path="editBook" element={<EditBook/>}/> */}
                 <Route path="any" element={<h2>Any</h2>}/>
             </Route> 
+            <Route path="users" element={<UsersList/>}/>
+
             <Route path="*" element={<NotFound/>}/>
           </Routes>
           {/* <Home /> */}

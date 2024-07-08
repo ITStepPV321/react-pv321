@@ -53,7 +53,7 @@ function EditBook() {
                     </label>
                 </div>
                 <div className="container-button">
-                    <input type="submit" value="Add Book" />
+                    <input type="submit" value="Edit Book" />
                 </div>
             </form>
         </div>
