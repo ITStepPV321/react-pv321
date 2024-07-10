@@ -10,6 +10,7 @@ import Book from './components/books/Book';
 import NewBook from './components/books/NewBook';
 import EditBook from './components/books/EditBook';
 import UsersList from './components/users/UsersList';
+import UsersGithub from './components/users/UsersGithub';
 
 function App() {
   return (
@@ -39,6 +40,7 @@ function App() {
                 <Route path="any" element={<h2>Any</h2>}/>
             </Route> 
             <Route path="users" element={<UsersList/>}/>
+            <Route path="userFromGithub" element={<UsersGithub/>}/>
 
             <Route path="*" element={<NotFound/>}/>
           </Routes>

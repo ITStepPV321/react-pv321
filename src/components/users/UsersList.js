@@ -39,6 +39,10 @@ export default function UsersList() {
                 console.log(data.users);
                 setUsers([...users, ...data.users]);
                 console.log(users);
+            })
+            .catch(error=>{
+                // console.warn(error);
+                console.error(error);
             });
 
     };

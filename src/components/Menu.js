@@ -12,6 +12,7 @@ export default function Menu(){
             <Link to="/contacts"> Contacts</Link>
             <Link to="/books"> Books</Link>
             <Link to="/users"> Users</Link>
+            <Link to="/userFromGithub"> UserGitHub</Link>
         </nav>
     )
 }
