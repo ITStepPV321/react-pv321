@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
-import { hasFormSubmit } from "@testing-library/user-event/dist/utils";
+
 const UserInfo = (props) => {
     return (
         <div>
@@ -13,7 +13,7 @@ const UserInfo = (props) => {
 }
 
 export default function UsersGithub() {
-    const [userObj, setUserObj] = useState({});
+    const [userObj, setUserObj] = useState(null);
     const [userName, setUserName] = useState("");
 
     // useEffect(() => {
@@ -36,10 +36,16 @@ export default function UsersGithub() {
     const loadUserInfo = async (userName) => {
         // const userName = "TSShrol";
         const query = `https://api.github.com/users/${userName}`;
-        const resp = await axios.get(query);
-        if (resp.status == 200) {
-            console.log(resp.data);
-            setUserObj(resp.data);
+        try {
+            const resp = await axios.get(query);
+            if (resp.status == 200) {
+                console.log(resp.data);
+                setUserObj(resp.data);
+                console.log(setUserObj.userName)
+            }
+        }
+        catch {
+            setUserObj(null);
         }
 
     }
@@ -50,9 +56,8 @@ export default function UsersGithub() {
                 <input type="submit" value="search" />
             </form>
 
-            <UserInfo {...userObj} />
+            {userObj == null ? <h2>Not Found</h2> : <UserInfo {...userObj} />}
         </>
     );
-
 
 }
