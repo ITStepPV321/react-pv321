@@ -16,9 +16,9 @@ export default function UsersGithub() {
     const [userObj, setUserObj] = useState(null);
     const [userName, setUserName] = useState("");
 
-    // useEffect(() => {
-    //     loadUserInfo();
-    // }, []);
+    useEffect(async () => {
+        await loadUserInfo();
+    }, []);
 
     useEffect(() => {
 
