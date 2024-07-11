@@ -18,17 +18,17 @@ export default function UsersList() {
     // }
     // );
 
-    //invoke only when component first renedered
-    useEffect(() => {
-        console.log("invoke!! use effect on start (create component)!");
-        loadUsers();
+    // //invoke only when component first renedered
+    // useEffect(() => {
+    //     console.log("invoke!! use effect on start (create component)!");
+    //     loadUsers();
        
-    },[]);
+    // },[]);
 
     //ivoke when the users property is cahnged
-    useEffect(()=>{
-        console.log("Effect invoke on users changed!");
-    },[users]);
+    // useEffect(()=>{
+    //     console.log("Effect invoke on users changed!");
+    // },[users]);
 
     const loadUsers = () => {
         let url=`https://dummyjson.com/users?limit=${pagination.limit}&skip=${pagination.skip}`;
