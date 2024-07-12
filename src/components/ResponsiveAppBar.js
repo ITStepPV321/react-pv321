@@ -17,6 +17,7 @@ import MenuItem from '@mui/material/MenuItem';
 import AdbIcon from '@mui/icons-material/Adb';
 // import { Link } from '@mui/material';
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../contexts/authContext';
 
 const pages = [
     {
@@ -50,6 +51,7 @@ const pages = [
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 
 function ResponsiveAppBar() {
+    const {userName}=React.useContext(AuthContext);
     const [anchorElNav, setAnchorElNav] = React.useState(null);
     const [anchorElUser, setAnchorElUser] = React.useState(null);
 
@@ -69,6 +71,7 @@ function ResponsiveAppBar() {
     };
 
     return (
+        // <AuthContext.Consumer>
         <AppBar position="static">
             <Container maxWidth="xl">
                 <Toolbar disableGutters>
@@ -161,7 +164,9 @@ function ResponsiveAppBar() {
                         ))}
                     </Box>
 
+                        <h5>{userName}</h5>
                     <Box sx={{ flexGrow: 0 }}>
+                    
                         <Tooltip title="Open settings">
                             <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
                                 <Avatar alt="Remy Sharp" src="/static/images/avatar/2.jpg" />
@@ -193,6 +198,7 @@ function ResponsiveAppBar() {
                 </Toolbar>
             </Container>
         </AppBar>
+        // </AuthContext.Consumer>
     );
 }
 export default ResponsiveAppBar;

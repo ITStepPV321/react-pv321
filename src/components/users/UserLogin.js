@@ -2,26 +2,40 @@ import * as React from 'react';
 import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
 import Stack from '@mui/material/Stack';
-import {useForm} from 'react-hook-form';
+import { useForm } from 'react-hook-form';
 import { Button } from '@mui/material';
+import { AuthContext } from '../../contexts/authContext';
 
 
 export default function UserLogin() {
-    const {register, handleSubmit} =useForm({
-        defaultValues:{
-                email:'',
-                password:''
-            }
+    
+    // const dataAuthContext=React.useContext(AuthContext);
+    const {userName, setUserName}=React.useContext(AuthContext);
+    const { register, handleSubmit } = useForm({
+        defaultValues: {
+            userName:'',
+            email: '',
+            password: ''
         }
+    }
     );
-const onSubmit=(data)=>{
-    console.log(data); 
+    const onSubmit = (data) => {
+        console.log(data);
+        setUserName(data.userName);
+        console.log(userName);
 
-}
+    }
 
     return (
-        <form style={{width:"60vw", margin:"auto", marginTop:"5vh" }} onSubmit={handleSubmit(onSubmit)}>
+        <form style={{ width: "60vw", margin: "auto", marginTop: "5vh" }} onSubmit={handleSubmit(onSubmit)}>
             <Stack spacing={2}>
+                <TextField
+                    required
+                    id="outlined-required"
+                    label="userName"
+                    // defaultValue="Hello World"
+                    {...register("userName")}
+                />
                 <TextField
                     required
                     id="outlined-required"
@@ -29,7 +43,7 @@ const onSubmit=(data)=>{
                     // defaultValue="Hello World"
                     {...register("email")}
                 />
-     
+
                 <TextField
                     id="outlined-password-input"
                     label="Password"
