@@ -5,12 +5,13 @@ import Stack from '@mui/material/Stack';
 import { useForm } from 'react-hook-form';
 import { Button } from '@mui/material';
 import { AuthContext } from '../../contexts/authContext';
+import { useContext } from 'react';
 
 
 export default function UserLogin() {
     
     // const dataAuthContext=React.useContext(AuthContext);
-    const {userName, setUserName}=React.useContext(AuthContext);
+    const {userName, setUserName}=useContext(AuthContext);
     const { register, handleSubmit } = useForm({
         defaultValues: {
             userName:'',

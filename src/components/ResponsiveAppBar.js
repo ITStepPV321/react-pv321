@@ -18,12 +18,13 @@ import AdbIcon from '@mui/icons-material/Adb';
 // import { Link } from '@mui/material';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../contexts/authContext';
+import { CounterContext } from '../contexts/counterContext';
 
 const pages = [
     {
         itemMenu: 'Home',
         path: "/"
-    }, 
+    },
     {
         itemMenu: 'About',
         path: "about"
@@ -31,16 +32,20 @@ const pages = [
     {
         itemMenu: 'Contacts',
         path: "contacts"
-    },{
+    }, {
         itemMenu: 'Books',
         path: "books"
-    },{
+    }, {
         itemMenu: 'Users',
         path: "users"
     },
     {
         itemMenu: 'UserGitHub',
         path: "userFromGithub"
+    },
+    {
+        itemMenu: 'Counter',
+        path: "counter"
     },
     {
         itemMenu: 'Login',
@@ -51,7 +56,8 @@ const pages = [
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 
 function ResponsiveAppBar() {
-    const {userName}=React.useContext(AuthContext);
+    const {count}=React.useContext(CounterContext);
+    const { userName } = React.useContext(AuthContext);
     const [anchorElNav, setAnchorElNav] = React.useState(null);
     const [anchorElUser, setAnchorElUser] = React.useState(null);
 
@@ -71,7 +77,7 @@ function ResponsiveAppBar() {
     };
 
     return (
-        // <AuthContext.Consumer>
+
         <AppBar position="static">
             <Container maxWidth="xl">
                 <Toolbar disableGutters>
@@ -150,23 +156,29 @@ function ResponsiveAppBar() {
                         PV321
                     </Typography>
                     <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
-                      
+
                         {pages.map((page) => (
                             <Link key={page.itemMenu} to={page.path}>
-                            <Button
-                                key={page.itemMenu}
-                                onClick={handleCloseNavMenu}
-                                sx={{ my: 2, color: 'white', display: 'block' }}
-                            >
-                                {page.itemMenu}
-                            </Button>
+                                <Button
+                                    key={page.itemMenu}
+                                    onClick={handleCloseNavMenu}
+                                    sx={{ my: 2, color: 'white', display: 'block' }}
+                                >
+                                    {page.itemMenu}
+                                </Button>
                             </Link>
                         ))}
-                    </Box>
 
+                    </Box>
+                    <Box width="200px">
+                        <h5>{count} products</h5>
+                        <AuthContext.Consumer>
+                            {value => <h5>{value.userName}</h5>}
+                        </AuthContext.Consumer>
                         <h5>{userName}</h5>
+                    </Box>
                     <Box sx={{ flexGrow: 0 }}>
-                    
+
                         <Tooltip title="Open settings">
                             <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
                                 <Avatar alt="Remy Sharp" src="/static/images/avatar/2.jpg" />
@@ -198,7 +210,7 @@ function ResponsiveAppBar() {
                 </Toolbar>
             </Container>
         </AppBar>
-        // </AuthContext.Consumer>
+
     );
 }
 export default ResponsiveAppBar;

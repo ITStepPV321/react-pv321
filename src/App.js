@@ -15,14 +15,15 @@ import ResponsiveAppBar from './components/ResponsiveAppBar';
 import UserLogin from './components/users/UserLogin';
 import { AuthContext } from './contexts/authContext';
 import { useState } from 'react';
+import Counter from './components/Counter';
 
 function App() {
-  const [userName, setUserName]=useState("");
-  const clearUserName=()=>setUserName("");
-  const value={userName,setUserName,clearUserName};
+  // const [userName, setUserName]=useState("");
+  // const clearUserName=()=>setUserName("");
+  // const value={userName,setUserName,clearUserName};
 
   return (
-    <AuthContext.Provider value={value}>
+    // <AuthContext.Provider value={value}>
       <div className="App">
         <header className='header'>
           {/* <Menu /> */}
@@ -51,6 +52,7 @@ function App() {
               </Route>
               <Route path="users" element={<UsersList/>}/>
               <Route path="userFromGithub" element={<UsersGithub/>}/>
+              <Route path="counter" element={<Counter/>}/>
               <Route path="login" element={<UserLogin/>}/>
               <Route path="*" element={<NotFound/>}/>
             </Routes>
@@ -65,7 +67,7 @@ function App() {
           </aside> */}
         </div>
       </div>
-    </AuthContext.Provider>
+    // </AuthContext.Provider>
 
   );
 }
