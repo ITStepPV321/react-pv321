@@ -19,7 +19,9 @@ const count = 0; // initial count
 export const COUNTER_ACTION_TYPES = {
     INCREMENT: 'INCREMENT',
     DECREMENT: 'DECREMENT',
-    RESET: 'RESET'
+    RESET: 'RESET',
+    INCREMENTBYN: 'INCREMENTBYN',
+
 }
 
 // export const counterReducer=(state=count,action)=>{
@@ -52,16 +54,21 @@ export const counterReducer2 = (state = INITIAL_STATE2, action) => {
                 ...state,
                 count: state.count + payload
             };
-        case 'DECREMENT':
+        case COUNTER_ACTION_TYPES.DECREMENT:
             return {
                 ...state,
                 count: state.count - payload
             };;
-        case 'RESET':
+        case COUNTER_ACTION_TYPES.RESET:
             return {
                 ...state,
                 count: 0
             };
+        case COUNTER_ACTION_TYPES.INCREMENTBYN:
+            return {
+                ...state,
+                count: state.count+payload
+            }
         default:
             return { ...state }
         // throw new Exeption('Invalid type actoion!!!')
@@ -76,8 +83,9 @@ export default function CounterProvider(props) {
 
     const decrement = () => { dispatch({ type: COUNTER_ACTION_TYPES.DECREMENT,payload:1 }) };
     const increment = () => { dispatch({ type: COUNTER_ACTION_TYPES.INCREMENT, payload:1 }) };
+    const increment_by_n = (n) => { dispatch({ type: COUNTER_ACTION_TYPES.INCREMENTBYN, payload:n }) };
     const reset = () => { dispatch({ type: COUNTER_ACTION_TYPES.RESET }) };
-    const value = { count, decrement, increment, reset };
+    const value = { count, decrement, increment, reset, increment_by_n };
     console.log(count);
     return (
         <CounterContext.Provider value={value}>

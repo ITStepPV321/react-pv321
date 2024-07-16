@@ -5,33 +5,39 @@ import { Button, Stack } from "@mui/material";
 
 
 export default function Counter() {
-    const { count, decrement, increment, reset } = useContext(CounterContext);
+    const { count, decrement, increment, reset, increment_by_n } = useContext(CounterContext);
     return (
         <>
-            <Stack width="20vw" style={{margin: "auto"}}>
+            <Stack width="20vw" style={{ margin: "auto" }}>
                 <h2>Counter Manager</h2>
                 <h3>{count}</h3>
-                <Button variant="contained" onClick={()=>increment()}>
+                <Button variant="contained" onClick={() => increment()}>
                     increment
                 </Button>
-                <Button variant="contained" color="success" onClick={()=>decrement()}>
+                <Button variant="contained" color="success" onClick={() => decrement()}>
                     decrement
                 </Button>
-                <Button variant="contained" color="error" onClick={()=>reset()}>
+                <Button variant="contained" onClick={() => increment_by_n(2)}>
+                    increment (+2)
+                </Button>
+                <Button variant="contained" color="error" onClick={() => reset()}>
                     reset
                 </Button>
             </Stack>
 
-            <Stack width="20vw" style={{margin: "auto"}}>
+            <Stack width="20vw" style={{ margin: "auto" }}>
                 <h2>Counter Manager</h2>
                 <h3>{count}</h3>
-                <Button variant="contained" onClick={()=>increment()}>
+                <Button variant="contained" onClick={() => increment()}>
                     increment
                 </Button>
-                <Button variant="contained" color="success" onClick={()=>decrement()}>
+                <Button variant="contained" color="success" onClick={() => decrement()}>
                     decrement
                 </Button>
-                <Button variant="contained" color="error" onClick={()=>reset()}>
+                <Button variant="contained" onClick={() => increment_by_n(2)}>
+                    increment (+2)
+                </Button>
+                <Button variant="contained" color="error" onClick={() => reset()}>
                     reset
                 </Button>
             </Stack>
