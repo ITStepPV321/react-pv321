@@ -27,7 +27,9 @@ function App() {
       <div className="App">
         <header className='header'>
           {/* <Menu /> */}
-          <ResponsiveAppBar/>
+          {/* <CounterProvider> */}
+            <ResponsiveAppBar/>
+          {/* </CounterProvider> */}
         </header>
         <div className="main-context">
           <main>
@@ -67,6 +69,7 @@ function App() {
           </aside> */}
         </div>
       </div>
+      
     // </AuthContext.Provider>
 
   );
