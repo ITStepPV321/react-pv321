@@ -1,5 +1,6 @@
 import { useContext } from "react";
-import { CounterContext } from "../contexts/counterContext";
+// import { CounterContext } from "../contexts/counterContext";
+import { CounterContext } from "../contexts/counterContextWithReducer";
 import { Button, Stack } from "@mui/material";
 
 

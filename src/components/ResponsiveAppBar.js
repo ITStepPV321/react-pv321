@@ -18,7 +18,8 @@ import AdbIcon from '@mui/icons-material/Adb';
 // import { Link } from '@mui/material';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../contexts/authContext';
-import { CounterContext } from '../contexts/counterContext';
+// import { CounterContext } from '../contexts/counterContext';
+import { CounterContext } from '../contexts/counterContextWithReducer';
 
 const pages = [
     {
@@ -56,6 +57,7 @@ const pages = [
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 
 function ResponsiveAppBar() {
+    // const {count}=React.useContext(CounterContext);
     const {count}=React.useContext(CounterContext);
     const { userName } = React.useContext(AuthContext);
     const [anchorElNav, setAnchorElNav] = React.useState(null);
