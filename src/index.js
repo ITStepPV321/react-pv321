@@ -7,10 +7,11 @@ import AuthProvider from './contexts/authContext';
 // import CounterProvider from './contexts/counterContext';
 import CounterProvider from './contexts/counterContextWithReducer';
 import { Provider } from 'react-redux';
-import { createStore } from 'redux';
-import rootReducer from './store/root.reducer';
+// import { createStore } from 'redux';
+// import rootReducer from './store/root.reducer';
+import { store } from './storeReduxToolkit/store';
 
-const store = createStore(rootReducer);
+// const store = createStore(rootReducer);
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
 

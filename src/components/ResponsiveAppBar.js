@@ -55,6 +55,10 @@ const pages = [
         path: "counterRedux"
     },
     {
+        itemMenu: 'CounterReduxToolkit',
+        path: "counterReduxToolkit"
+    },
+    {
         itemMenu: 'Login',
         path: "login"
     },
