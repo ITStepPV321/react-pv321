@@ -11,8 +11,8 @@ const count = 0; // initial count
 
 
 // const action={
-// type: Name_action // 'INCREMET',
-// payload: ... //step 
+    // type: Name_action // 'INCREMET',
+    // payload: ... //step 
 // }
 //
 //======== TYPES Actions=============

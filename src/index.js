@@ -6,18 +6,26 @@ import { BrowserRouter } from 'react-router-dom';
 import AuthProvider from './contexts/authContext';
 // import CounterProvider from './contexts/counterContext';
 import CounterProvider from './contexts/counterContextWithReducer';
+import { Provider } from 'react-redux';
+import { createStore } from 'redux';
+import rootReducer from './store/root.reducer';
 
+const store = createStore(rootReducer);
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
 
   <React.StrictMode>
-    <CounterProvider>
-      <AuthProvider>
-        <BrowserRouter>
-          <App />
-        </BrowserRouter>
-      </AuthProvider>
-    </CounterProvider>
+    {/* using react Redux */}
+    <Provider store={store}>
+      {/* using Context */}
+      <CounterProvider>
+        <AuthProvider>
+          <BrowserRouter>
+            <App />
+          </BrowserRouter>
+        </AuthProvider>
+      </CounterProvider>
+    </Provider>
   </React.StrictMode>
 );
 

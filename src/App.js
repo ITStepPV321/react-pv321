@@ -16,6 +16,7 @@ import UserLogin from './components/users/UserLogin';
 import { AuthContext } from './contexts/authContext';
 import { useState } from 'react';
 import Counter from './components/Counter';
+import CounterWithRedux from './components/CounterWithRedux';
 
 function App() {
   // const [userName, setUserName]=useState("");
@@ -55,6 +56,7 @@ function App() {
               <Route path="users" element={<UsersList/>}/>
               <Route path="userFromGithub" element={<UsersGithub/>}/>
               <Route path="counter" element={<Counter/>}/>
+              <Route path="counterRedux" element={<CounterWithRedux/>}/>
               <Route path="login" element={<UserLogin/>}/>
               <Route path="*" element={<NotFound/>}/>
             </Routes>

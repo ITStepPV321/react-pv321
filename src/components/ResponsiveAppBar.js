@@ -20,6 +20,8 @@ import { Link } from 'react-router-dom';
 import { AuthContext } from '../contexts/authContext';
 // import { CounterContext } from '../contexts/counterContext';
 import { CounterContext } from '../contexts/counterContextWithReducer';
+import { useSelector } from 'react-redux';
+import { selectCount } from '../store/reducers/counterReducer';
 
 const pages = [
     {
@@ -49,6 +51,10 @@ const pages = [
         path: "counter"
     },
     {
+        itemMenu: 'CounterRedux',
+        path: "counterRedux"
+    },
+    {
         itemMenu: 'Login',
         path: "login"
     },
@@ -57,6 +63,8 @@ const pages = [
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 
 function ResponsiveAppBar() {
+    const countByReducer=useSelector(selectCount);
+    const titleByReducer=useSelector((store)=>store.counter.title);
     // const {count}=React.useContext(CounterContext);
     const {count}=React.useContext(CounterContext);
     const { userName } = React.useContext(AuthContext);
@@ -173,7 +181,9 @@ function ResponsiveAppBar() {
 
                     </Box>
                     <Box width="200px">
-                        <h5>{count} products</h5>
+                        <h5>Context: {count} </h5>
+                        <h5>Redux Count: {countByReducer} </h5>
+                        <h5>Redux Title: {titleByReducer} </h5>
                         <AuthContext.Consumer>
                             {value => <h5>{value.userName}</h5>}
                         </AuthContext.Consumer>
