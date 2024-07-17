@@ -181,9 +181,7 @@ function ResponsiveAppBar() {
 
                     </Box>
                     <Box width="200px">
-                        <h5>Context: {count} </h5>
-                        <h5>Redux Count: {countByReducer} </h5>
-                        <h5>Redux Title: {titleByReducer} </h5>
+                        <h5>Context: {count} Redux Count: {countByReducer}  Redux Title: {titleByReducer} </h5>
                         <AuthContext.Consumer>
                             {value => <h5>{value.userName}</h5>}
                         </AuthContext.Consumer>

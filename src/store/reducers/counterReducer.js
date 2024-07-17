@@ -23,6 +23,7 @@ export const counterReducer = (state = COUNT_DATA, action) => {
                 count: state.count + 1
             };
         case COUNTER_ACTION_TYPES.DECREMENT:
+            console.log(1);
             return {
                 ...state,
                 count: state.count - 1
@@ -33,6 +34,7 @@ export const counterReducer = (state = COUNT_DATA, action) => {
                 count: 0
             };
         case COUNTER_ACTION_TYPES.INCREMENTBYN:
+            console.log(payload.n);
             return {
                 ...state,
                 count: state.count+payload.n
@@ -45,10 +47,11 @@ export const counterReducer = (state = COUNT_DATA, action) => {
 
 
 //===============ACTIONS=================
-const decrement = () => ( { type: COUNTER_ACTION_TYPES.DECREMENT } );
-const increment = () => ( { type: COUNTER_ACTION_TYPES.INCREMENT } );
-const increment_by_n = (n) => ( { type: COUNTER_ACTION_TYPES.INCREMENTBYN, payload: {n} });
-const reset = () => ( { type: COUNTER_ACTION_TYPES.RESET });
+export const decrement = () => ( { type: COUNTER_ACTION_TYPES.DECREMENT } );
+export const increment = () => ( { type: COUNTER_ACTION_TYPES.INCREMENT } );
+export const increment_by_n = (n) => ( { type: COUNTER_ACTION_TYPES.INCREMENTBYN, payload: {n} });
+export const reset = () => ( { type: COUNTER_ACTION_TYPES.RESET });
 
 //=========SELECTORS========
 export const selectCount=(store)=>store.counter.count;
+export const selectTitile=(store)=>store.counter.count;
